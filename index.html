@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me perdoa?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: "Gill Sans", sans-serif;
+            background-color: #ffe6e6;
+            color: #800000;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #ff6666;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff4d4d;
+            transform: scale(1.05);
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 2em;
+            color: #800000;
+        }
+        #coitadolandia {
+            width: 250px;
+            height: 250px;
+
+        }
+    </style>
+</head>
+<body>
+    <img src="https://i.pinimg.com/736x/2d/23/f5/2d23f59954aad6b8a8ca32c8212ee21a.jpg" alt="coitadinho" id="coitadolandia">
+    <h1>Me Perdoa?</h1>
+    <button id="yesButton">NÃO</button>
+    <button id="noButton">SIM</button>
+    <div id="message"></div>
+
+    <script>
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const message = document.getElementById('message');
+
+        yesButton.addEventListener('mouseover', () => {
+            //deixa o botão numa posição aleatória
+            const x = Math.floor(Math.random() * (window.innerWidth - yesButton.clientWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - yesButton.clientHeight));
+            yesButton.style.position = 'absolute';
+            yesButton.style.left = `${x}px`;
+            yesButton.style.top = `${y}px`;
+        });
+
+        noButton.addEventListener('click', () => {
+            message.textContent = 'Obrigado :3';
+        });
+    </script>
+</body>
+</html>
